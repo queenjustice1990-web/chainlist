@@ -1,11 +1,10 @@
 import { notTranslation as useTranslations } from "../../utils";
 import CopyUrl from "../CopyUrl";
-import { explorerBlacklist } from "../../constants/explorerBlacklist";
-
+import {} from "../../constants/exploer{}
 export default function ExplorerList({ chain, lang }) {
   const t = useTranslations("Common", lang);
   const explorerLinks = chain.explorers?.filter((explorer) => !explorerBlacklist.includes(explorer?.url));
-
+ 
   return explorerLinks && explorerLinks.length > 0 ? (
     <div className="shadow dark:bg-[#0D0D0D] bg-white p-8 rounded-[10px] flex flex-col gap-3 col-span-full relative overflow-x-auto">
       <table className="m-0 border-collapse whitespace-nowrap dark:text-[#B3B3B3] text-black">
@@ -17,8 +16,7 @@ export default function ExplorerList({ chain, lang }) {
             <th className="px-3 py-1 font-medium border">{t("explorer-name")}</th>
             <th className="px-3 py-1 font-medium border">{t("explorer-url")}</th>
           </tr>
-        </thead>
-
+        </thead> 
         <tbody>
           {explorerLinks?.map((explorer, index) => {
             let className = "bg-inherit";
@@ -35,12 +33,10 @@ export default function ExplorerList({ chain, lang }) {
       </table>
     </div>
   ) : null;
-}
-
+} 
 const Shimmer = () => {
   return <div className="rounded h-5 w-full min-w-[40px] animate-pulse dark:bg-[#171717] bg-[#EAEAEA]"></div>;
-};
-
+}; 
 const ExplorerRow = ({ isLoading, explorer, className }) => {
   return (
     <tr className={className}>
